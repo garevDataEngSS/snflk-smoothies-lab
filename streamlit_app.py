@@ -40,7 +40,7 @@ if ingridients_list:
     #st.write(ingredients_string)
 
     for eachFruit in ingridients_list:
-      search_on=pd_df.loc[fruitop_pd['FRUIT_NAME'] == eachFruit, 'SEARCH_ON'].iloc[0]
+      search_on=fruitop_pd.loc[fruitop_pd['FRUIT_NAME'] == eachFruit, 'SEARCH_ON'].iloc[0]
       #st.write('The search value for ', eachFruit,' is ', search_on, '.')
       smoothiefroot_response = requests.get(f"https://my.smoothiefroot.com/api/fruit/{search_on}")
       #st.text(smoothiefroot_response)
